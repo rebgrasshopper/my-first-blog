@@ -12,6 +12,17 @@
             <p id='intro'>
                 Hey hey hey! This is Microraptor! The micro-est feathered lizard predator around! I'm pretty rad, and all, but I was feeling underappreciated back at the nest, and you know, a young raptor has to stretch their pseudowings. So here we are! I'm gonna migrate! I'll keep you posted! (Get it? With posts!)
             </p>
+
+            {% for post in posts %}
+            <div>
+                <h2><a href="#">{{ post.title }}</a></h2>
+                <p>published: {{ post.published_date }}</p>
+                <div>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            </div>
+            {% endfor %}
+
         </div>
     </body>
 </html>
