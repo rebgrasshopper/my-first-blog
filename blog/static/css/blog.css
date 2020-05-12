@@ -33,19 +33,21 @@ h2>a {
 }
 
 .postbox_main {
-    background-color: rgb(92, 216, 43);
+    background-color: ivory;
+    border-radius: 20px;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
+    padding: 10px;
 }
 
 .postbox {
-    background-color: rgb(113, 201, 55);
+    background-color: ivory;
     margin: 8px;
 }
 
 .postbox_title {
-    background-color: rgb(51, 207, 46);
+    background-color: ivory;
     margin-left: 8px;
     margin-right: 8px;
     margin-bottom: 3px;
@@ -53,7 +55,7 @@ h2>a {
 }
 
 .postbox_date {
-    background-color: rgb(78, 192, 43);
+    background-color: ivory;
     margin-left: 8px;
     margin-right: 8px;
     margin-top: 3px;
