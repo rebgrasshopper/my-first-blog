@@ -1,44 +1,25 @@
-{% load static %}
-<html>
-    <head>
-        <title>Microraptor Migrations</title>
+{% extends 'blog/base.html' %}
 
-        <!--bootstrap and css styles-->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        
-        <!--favicon-->
-        <link rel="icon" type="image/png" href="https://www.andpossiblydinosaurs.com/wp-content/uploads/2015/08/Favicon-Large-55ccb589v1_site_icon.png">
+{% block content %} 
+
+    <!--general blog info-->
+    <div id=intro_div>
+        <p id='intro'>
+            Hey hey hey! This is Microraptor! The micro-est feathered lizard predator around! I'm pretty rad, and all, but I was feeling underappreciated back at the nest, and you know, a young raptor has to stretch their pseudowings. So here we are! I'm gonna migrate! I'll keep you posted! (Get it? With posts!)
+        </p>
+        <hr>
+    </div>  
     
-    </head>
-    <body>
-        <!--titles and subtitles-->
-        <div id='banner' title="Microraptor image from ">
-            <h1>Microraptor Migrations</h1>
-            <h3 id='subtitle'>Time to migrate!</h2>
-        </div>
-
-        <div>
-            <!--general blog info-->
-            <p id='intro'>
-                Hey hey hey! This is Microraptor! The micro-est feathered lizard predator around! I'm pretty rad, and all, but I was feeling underappreciated back at the nest, and you know, a young raptor has to stretch their pseudowings. So here we are! I'm gonna migrate! I'll keep you posted! (Get it? With posts!)
-            </p>
+    <!--list of posts-->
+    {% for post in posts %}
+        <div class='postbox_main'>
+            <h2 class='postbox_title'><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p class='postbox_date'>published: {{ post.published_date }}</p>
             <hr>
-
-        <!--post view-->
-            {% for post in posts %}
-            <div class='postbox_main'>
-                <h2 class='postbox_title'><a href="#">{{ post.title }}</a></h2>
-                <p class='postbox_date'>published: {{ post.published_date }}</p>
-                <hr>
-                <div class='postbox'>
-                    <p class='postbox'>{{ post.text|linebreaksbr }}</p>
-                </div>
+            <div class='postbox'>
+                <p class='postbox'>{{ post.text|linebreaksbr }}</p>
             </div>
-            <hr>
-            {% endfor %}
-
         </div>
-    </body>
-</html>
+        <hr>
+    {% endfor %}
+{% endblock %}

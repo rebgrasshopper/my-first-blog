@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+    <head>
+        <title>Microraptor Migrations</title>
+
+        <!--bootstrap and css styles-->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        
+        <!--favicon-->
+        <link rel="icon" type="image/png" href="https://www.andpossiblydinosaurs.com/wp-content/uploads/2015/08/Favicon-Large-55ccb589v1_site_icon.png">
+    
+    </head>
+    <body>
+        <!--titles and subtitles-->
+        <div id='banner' title="Microraptor image from ">
+            <h1>Microraptor Migrations</h1>
+            <h3 id='subtitle'>Time to migrate!</h3>
+        </div>
+
+
+
+        <!--post view-->
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
