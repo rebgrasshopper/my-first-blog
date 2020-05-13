@@ -16,7 +16,7 @@
             <h2 class='postbox_title'><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p class='postbox_date'>published: {{ post.published_date }}</p>
             <hr>
-            <img class ='image' src= '{{ post.image.url }}' alt=' {{ post.title }}' height="100px">
+            <img class ='image' src= '{{ post.image.url }}' title='{{ post.image_alt }}' height="100px">
             <div class='postbox'>
                 <p class='postbox'>{{ post.text|linebreaksbr }}</p>
             </div>
