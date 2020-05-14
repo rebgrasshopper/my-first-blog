@@ -2,12 +2,18 @@
 
 {% block content %}
     <div class='post'>
-        {% if post.published_date %}
-            <div class='date'>
-                {{ post.published_date }}
-            </div>
-        {% endif %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <div class = 'title_box'>
+            <h2 class = 'title'>{{ post.title }}</h2>
+            {% if post.published_date %}
+                <div class='date'>
+                    {{ post.published_date }}
+                </div>
+            {% endif %}
+        </div>
+        <hr id = 'title_divider'>
+        <img class = 'large_image' src = '{{ post.image.url }}' title = '{{ post.image_alt }}' width = 500px>
+        <div class = 'text_box'>
+            <p class = 'text'>{{ post.text|linebreaksbr }}</p>
+        </div>
     </div>
 {% endblock %}
